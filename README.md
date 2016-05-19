@@ -5,3 +5,5 @@ This application allows the user the see the data related to Chicken weight and 
 The data for this project is the data of the "ChickWeight" dataset, from R.
 
 The project is published in https://evandroarmelin.shinyapps.io/DevDataProd/
+
+The pitch can be found in http://rpubs.com/evandroarmelin/devdataproduct_pitch
