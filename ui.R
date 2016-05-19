@@ -7,26 +7,37 @@
 
 library(shiny)
 
-shinyUI(pageWithSidebar(
+shinyUI(
   
-  headerPanel("Chicken Weights in Time"),
+  navbarPage("Chicken Weight Visualizer vs Diet",
+             
+             tabPanel("Visualize the Data",
   
-  sidebarPanel(
-    
-    selectInput("diet", "Diet", diet_list, multiple = FALSE)
-      
-    ),
-  
-  mainPanel(
-    
-    h3("Weight by Time for the selected Diet"),
-    plotOutput("weight_time_plot"),
-    
-    h3("Average Weight for this Diet"),
-    verbatimTextOutput("weight_mean"),
-    
-    h3("Average Weight increment per unit of time for this diet"),
-    verbatimTextOutput("w_t_mean")
-    
-  )
+                      headerPanel("Chicken Weights in Time"),
+                      
+                      sidebarPanel(
+                        
+                        selectInput("diet", "Diet", diet_list, multiple = FALSE)
+                          
+                        ),
+                      
+                      mainPanel(
+                        
+                        h3("Weight by Time for the selected Diet"),
+                        plotOutput("weight_time_plot"),
+                        
+                        h3("Average Weight for this Diet"),
+                        verbatimTextOutput("weight_mean"),
+                        
+                        h3("Average Weight increment per unit of time for this diet"),
+                        verbatimTextOutput("w_t_mean")
+                        
+                      )
+             ),
+             
+             tabPanel("About",
+                      mainPanel(
+                        includeMarkdown("about.md")
+                      )
+             )
 ))
